@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 
-//admin panel login
+//admin panel login backend
 Route::get('/login','Backend\UserController@login')->name('login');
 Route::post('/login','Backend\UserController@loginProcess')->name('login.do');
 
