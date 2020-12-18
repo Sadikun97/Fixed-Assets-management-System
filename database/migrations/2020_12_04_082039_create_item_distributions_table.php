@@ -15,7 +15,12 @@ class CreateItemDistributionsTable extends Migration
     {
         Schema::create('item_distributions', function (Blueprint $table) {
             $table->id();
+            $table->foreignID('item_id')->nullable();
+            $table->foreignID('employee_id')->nullable();
+            $table->string('location')->nullable();
+            $table->string('remark');
             $table->timestamps();
+            
         });
     }
 

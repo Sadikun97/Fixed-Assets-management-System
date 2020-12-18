@@ -59,7 +59,7 @@
         </li>
 
         <li>
-          <a class="app-menu__item" href="charts.html">
+          <a class="app-menu__item" href="{{route('item.distributions')}}">
             <i class="app-menu__icon fa fa-pie-chart"></i>
             <span class="app-menu__label">Item Distributions
             </span></a>

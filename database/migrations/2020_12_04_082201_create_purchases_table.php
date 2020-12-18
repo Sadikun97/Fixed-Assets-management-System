@@ -13,13 +13,13 @@ class CreatePurchasesTable extends Migration
      */
     public function up()
     {
-        Schema::create('purchases', function (Blueprint $table) {
+        Schema::create('purchases', function (Blueprint $table) 
             $table->id();
              $table->string('created_by');
              $table->string('total_amount');
                $table->text('remark');
             $table->timestamps();
-        });
+        );
     }
 
     /**

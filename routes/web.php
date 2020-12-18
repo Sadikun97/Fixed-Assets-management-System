@@ -44,6 +44,14 @@ Route::post('/item_types/create','Backend\Item_TypesController@createitypes')->n
 Route::get('/item_typesview','Backend\Item_TypesController@itemtypesview')->name('itview');
 Route::get('/item_types/delete/{id}','Backend\Item_TypesController@delete')->name('it.delete');
 
+
+
+//item distribution
+Route::get('item_distributions','Backend\Item_DistributionsController@makeitemd')->name("itemt.distributions");
+
+
+
+
 //employee
 
 Route::get('/employee','Backend\EmployeeController@employee')->name('employee');

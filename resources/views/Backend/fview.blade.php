@@ -6,7 +6,7 @@
   <thead class="thead-dark">
     <tr>
       <th scope="col">Sl</th>
-      <th scope="col">Enter Item types id</th>
+      <th scope="col">Item types id</th>
       <th scope="col">Code</th>
       <th scope="col">Name</th>
       <!-- <th scope="col">Image</th> -->
