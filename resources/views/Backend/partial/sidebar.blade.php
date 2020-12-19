@@ -58,13 +58,24 @@
           </ul>
         </li>
 
-        <li>
-          <a class="app-menu__item" href="{{route('item.distributions')}}">
-            <i class="app-menu__icon fa fa-pie-chart"></i>
-            <span class="app-menu__label">Item Distributions
-            </span></a>
+         <li class="treeview"><a class="app-menu__item" href="#"
+         data-toggle="treeview">
+         <i class="app-menu__icon fa fa-edit"></i>
+         <span class="app-menu__label">Item Distribution
+         </span>
+         <i class="treeview-indicator fa fa-angle-right"></i></a>
+          <ul class="treeview-menu">
+            <li><a class="treeview-item" href="{{route('itemt.distributions')}}">
+              <i class="icon fa fa-circle-o"></i>
+               Item Distribute</a>
+             </li>
+            <li><a class="treeview-item" href="{{route('itemd.view')}}">
+              <i class="icon fa fa-circle-o"></i> 
+              View Item Distributions</a>
+            </li>
+          </ul>
         </li>
-        
+
         
         <li>
           <a class="app-menu__item" href="{{route('purchases')}}">
@@ -110,13 +121,6 @@
             <i class="app-menu__icon fa fa-pie-chart"></i>
             <span class="app-menu__label">Damages
             </span></a>
-          </li>
-
-        <li>
-          <a class="app-menu__item" href="charts.html">
-            <i class="app-menu__icon fa fa-pie-chart"></i>
-            <span class="app-menu__label">Vendors</span>
-          </a>
           </li>
 
         <li>

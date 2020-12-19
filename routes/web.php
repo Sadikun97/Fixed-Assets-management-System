@@ -47,8 +47,11 @@ Route::get('/item_types/delete/{id}','Backend\Item_TypesController@delete')->nam
 
 
 //item distribution
-Route::get('item_distributions','Backend\Item_DistributionsController@makeitemd')->name("itemt.distributions");
 
+Route::get('/item_distributions','Backend\Item_DistributionsController@makeitemd')->name('itemt.distributions');
+
+Route::post('/item_distributions/create','Backend\Item_DistributionsController@createitemd')->name('itemd.create');
+Route::get('/itemdview','Backend\Item_DistributionsController@itemtdview')->name('itemd.view');
 
 
 

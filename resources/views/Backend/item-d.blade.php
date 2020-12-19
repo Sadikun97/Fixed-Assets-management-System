@@ -2,7 +2,7 @@
 @section('main')
 <main class="app-content">
 
-<h1>Item Distributions</h1>
+<h1>Distribute Item</h1>
 
 <!-- message code in form -->
 
@@ -19,18 +19,25 @@
 
 <!-- code for form -->
 
-    <form action="{{#}}"  method="post">
+    <form action="{{route('itemd.create')}}"  method="post">
         @csrf
         <div .col-md-3 .offset-md-3 class="form-group">
-            <label for="item_id">Enter Item's Id</label>
-            <input name="item_id" required placeholder="Enter Item Id" type="text" class="form-control" id="item_name" aria-describedby="emailHelp" autocomplete="off">
-
+            <label for="item_id">Under Item's</label>
+            <select name="item_id" id="item_id" class="form-control">
+                <option value="0">Select a Item</option>
+                @foreach($itemdshow as $data)
+                <option value="{{$data->id}}">{{$data->name}}</option>
+                @endforeach
+            </select>
         </div>
 
         <div class="form-group">
-            <label for="employee_id">Employees's Id</label>
-            <input name="employee_id" required placeholder="Employees's Id" type="text" class="form-control" id="text"
-                >
+            <select name="employee_id" id="employee_id" class="form-control">
+                <option value="0">Select a Employee Name</option>
+                @foreach($itemdshoww as $data)
+                <option value="{{$data->id}}">{{$data->name}}</option>
+                @endforeach
+            </select>
         </div>
          <div class="form-group">
             <label for="location">Location</label>
@@ -39,7 +46,7 @@
         </div>
 
  <div class="form-group">
-            <label for="remark">emark</label>
+            <label for="remark">Remark</label>
             <input name="remark" required placeholder="Remark" type="text" class="form-control" id="text"
                 >
         </div>
