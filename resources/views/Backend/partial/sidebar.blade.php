@@ -109,12 +109,22 @@
           </ul>
         </li>
 
-        <li>
-          <a class="app-menu__item" href="charts.html">
-            <i class="app-menu__icon fa fa-pie-chart">
-            </i><span class="app-menu__label">Stock
-            </span></a>
-          </li>
+        <li class="treeview"><a class="app-menu__item" href="#"
+         data-toggle="treeview">
+         <i class="app-menu__icon fa fa-edit"></i>
+         <span class="app-menu__label">Stock
+         <i class="treeview-indicator fa fa-angle-right"></i></a>
+          <ul class="treeview-menu">
+            <li><a class="treeview-item" href="{{route('stock')}}">
+              <i class="icon fa fa-circle-o"></i>
+               Add Items in stock</a>
+             </li>
+            <li><a class="treeview-item" href="{{route('stock.view')}}">
+              <i class="icon fa fa-circle-o"></i> 
+              View stock</a>
+            </li>
+          </ul>
+        </li>
 
         <li>
           <a class="app-menu__item" href="charts.html">

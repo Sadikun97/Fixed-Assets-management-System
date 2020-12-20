@@ -19,6 +19,7 @@ class CreateItemDistributionsTable extends Migration
             $table->foreignID('employee_id')->nullable();
             $table->string('location')->nullable();
             $table->string('remark');
+            $table->string('status')->default('unuesed');
             $table->timestamps();
             
         });

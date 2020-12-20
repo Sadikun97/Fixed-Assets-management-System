@@ -63,6 +63,10 @@ Route::get('/eview','Backend\EmployeeController@eview')->name('eview');
 Route::get('/employee/delete/{id}','Backend\EmployeeController@deleteemployee')->name('employee.delete');
 
 
+//stock
+Route::get('/stock','Backend\StockController@makestock')->name('stock');
+Route::post('/stock/add','Backend\StockController@addstock')->name('add.stock');
+Route::get('/stockview','Backend\StockController@stockview')->name('stock.view');
 
 //purchases
 Route::get('/purchases','Backend\purchasesController@makepurchases')->name('purchases');

@@ -55,7 +55,7 @@ class EmployeeController extends Controller
     public function eview()
     {
             
-        $employees= Employee::paginate(1);
+        $employees= Employee::paginate(5);
         return view('Backend.eview', compact('employees'));
 
     }
