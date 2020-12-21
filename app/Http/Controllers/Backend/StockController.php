@@ -12,19 +12,19 @@ class StockController extends Controller
     //make stock
     public function makestock(){
 
-       $itemsshow = item::all();
-    	return view('backend.stock',compact('itemsshow'));
+      $itemdshow = Item::all();
+    	return view('Backend.stock',compact('itemdshow'));
     }
 
 
     //create stock
 
-    public function createstock(Request $request){
+    public function addstock(Request $request){
 
          //ORM
         Stock::create([
             
-             'item_id'=>$request->item_id,
+             'items_id'=>$request->items_id,
             'quantity'=>$request->quantity,
            
         ]);
@@ -32,12 +32,12 @@ class StockController extends Controller
         return redirect()->back()->with('message','Item Added in Stock Successfully.');
 
     }
-    //view all items
+    //view stocks
     public function stockview()
     {
             
-        
-        return view('Backend.stockview');
+        $stocks = Stock::all();
+        return view('Backend.stockview',compact('stocks'));
 
     }
 }

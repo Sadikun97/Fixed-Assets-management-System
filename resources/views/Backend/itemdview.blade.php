@@ -33,6 +33,49 @@
         <a class="btn btn-secondary" herf="">Damage</a>
       </td>
     </tr>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Item in Damage</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+      <form method="post" action="{{route('damage.create')}}">
+@csrf
+
+<div .col-md-3 .offset-md-3 class="form-group">
+            <label for="item_id">Under Item's</label>
+            <select name="item_id" id="item_id" class="form-control">
+                <option value="0">Select a Item</option>
+                @foreach($itemdshow as $data)
+                <option value="{{$data->id}}">{{$data->name}}</option>
+                @endforeach
+            </select>
+        </div>
+
+  <div class="form-group">
+    <label for="reason">Reason</label>
+    <input type="string" name="reason" class="form-control"  placeholder="Enter the reason">
+  </div>
+
+  <div class="form-group">
+    <label for="reason">Is Responsible</label>
+    <input type="string" name="is responsible" class="form-control"  placeholder="is responsible">
+  </div>
+  
+
+      <div class="modal-footer">
+    
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
     @endforeach
   </tbody>
 </table>

@@ -8,6 +8,7 @@
       <th scope="col">Sl</th>
       <th scope="col">Item's Id</th>
       <th scope="col">Quantity</th>
+      <th scope="col">action</th>
      
       
     </tr>

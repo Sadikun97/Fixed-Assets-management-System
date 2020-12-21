@@ -21,11 +21,16 @@
 
     <form action="{{route('add.stock')}}"  method="post">
         @csrf
+        
+
+
+
         <div .col-md-3 .offset-md-3 class="form-group">
-            <label for="item_id">Under Item's</label>
-            <select name="item_id" id="item_id" class="form-control">
+            <label for="items_id">Under Item's</label>
+            <select name="items_id" id="items_id" class="form-control">
                 <option value="0">Select a Item</option>
-                @foreach($itemsshow as $data)
+
+                @foreach($itemdshow as $data)
                 <option value="{{$data->id}}">{{$data->name}}</option>
                 @endforeach
             </select>
@@ -33,8 +38,8 @@
 
         
          <div class="form-group">
-            <label for="location">Quantity</label>
-            <input name="location" required placeholder="location" type="string" class="form-control" id="location"
+            <label for="quantity">Quantity</label>
+            <input name="quantity" required placeholder="Quantity" type="string" class="form-control" id="quantity"
                 >
         </div>
 
