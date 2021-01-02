@@ -15,7 +15,7 @@ class CreateDamagesTable extends Migration
     {
         Schema::create('damages', function (Blueprint $table) {
             $table->id();
-            $table->foreignID('item_id');
+            $table->foreignID('item_distribution_id');
               $table->text('reason');
                $table->string('is_responsible');
             $table->timestamps();

@@ -53,9 +53,16 @@ Route::get('/item_distributions','Backend\Item_DistributionsController@makeitemd
 Route::post('/item_distributions/create','Backend\Item_DistributionsController@createitemd')->name('itemd.create');
 Route::get('/itemdview','Backend\Item_DistributionsController@itemtdview')->name('itemd.view');
 
+// Route::get('/damageshow','Backend\Item_DistributionsController@damageshow')->name('damagetable.show');
+// Route::post('/add_damage','Backend\Item_DistributionsController@damageadd')->name('add.damage');
+
+
 //Damages
-Route::get('/damage','Backend\DamageController@makedamage')->name('damage');
+Route::get('/damage/{id}','Backend\DamageController@makedamage')->name('damage');
 Route::post('/damage/create','Backend\DamageController@createdamage')->name('damage.create');
+
+
+
 
 
 //employee

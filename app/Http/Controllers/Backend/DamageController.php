@@ -6,30 +6,44 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Damage;
 use App\Models\Item;
+use App\Models\Item_Distribution;
 
 class DamageController extends Controller
 {
-    //damage form show
     
-    public function makedamage(){
+   
+     //make damage
+     public function makedamage($id)
+    {
+      $disId=$id;
+      return view('backend.damage',compact('disId'));
+    }
 
-        $itemshow = Item::all();
-         return view('backend.damage',compact('itemshow'));
-     }
- 
-     //add item in damage
+//add item in damage
+
      public function createdamage(Request $request){
 
-        //ORM
-       Item::create([
-           'name'=>$request->name,
-            'item_types_id'=>$request->item_types_id,
-           'code'=>$request->code,
-           'description'=>$request->description
-       ]);
+      
 
-       return redirect()->back()->with('message','Item Created Successfully.');
+        $damage= Damage::create([
+            'reason'=>$request->reason,
+             'is_responsible'=>$request->is_responsible,
+             'item_distribution_id'=>$request->disId
+          
+        ]);
+        return redirect()->back()->with('message','Item added in damage list successfully.');
 
-   }
+    }
 
+    //view damage list
+
+     public function fview()
+    {
+            
+        return view('Backend.damageview', compact('damages'));
+
+    }
+
+
+      
 }
