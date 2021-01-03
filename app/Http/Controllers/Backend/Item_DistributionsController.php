@@ -38,12 +38,12 @@ public function createitemd(Request $request){
     }
 
 
-    //show itemdview
+    //view itemdview
 
     public function itemtdview()
     {
-            
-        $itemdistributions= Item_Distribution::all();
+          $itemdistributions=Item_Distribution::with('itemRelation')->get();
+          $itemdistributions=Item_Distribution::with('employeeRelation')->get();    
         return view('Backend.itemdview', compact('itemdistributions'));
 
     }

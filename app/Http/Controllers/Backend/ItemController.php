@@ -67,7 +67,7 @@ class ItemController extends Controller
     public function fview()
     {
             
-        $item=Item::paginate(2);
+        $item=Item::with('itemTypesRelation')->paginate(2);
         return view('Backend.fview', compact('item'));
 
     }
@@ -87,6 +87,27 @@ class ItemController extends Controller
            $message="No data found.";
        }
         return redirect()->back()->with('message',$message);
+    }
+
+
+    public function itemActive($id)
+    {
+         $itemStatus = Item::find($id);
+
+         if($itemStatus->status)
+         {
+             $itemStatus->update([
+
+                 'status' => 0
+             ]);
+         }else{
+             $itemStatus->update([
+
+                 'status' => 1
+             ]);
+         }
+
+         return redirect()->back()->with('message','Item Status Updated!');
     }
 
     

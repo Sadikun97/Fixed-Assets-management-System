@@ -32,6 +32,7 @@
         </div>
 
         <div class="form-group">
+            <label for="item_id">Under Employee's</label>
             <select name="employee_id" id="employee_id" class="form-control">
                 <option value="0">Select a Employee Name</option>
                 @foreach($itemdshoww as $data)

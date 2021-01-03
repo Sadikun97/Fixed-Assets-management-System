@@ -18,6 +18,7 @@ class CreateItemsTable extends Migration
              $table->foreignID('item_types_id');
              $table->string('code');
              $table->string('name');
+             $table->string('status')->default(false);  
              $table->string('description')->nullable();
              $table->timestamps();
         });

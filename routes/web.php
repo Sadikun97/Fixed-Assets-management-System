@@ -37,12 +37,14 @@ Route::get('/item/edit/{id}','Backend\ItemController@edititem')->name('item.edit
 Route::put('/item/update/{id}','Backend\ItemController@updateitem')->name('item.update');
 Route::get('/item/delete/{id}','Backend\ItemController@delete')->name('item.delete');
 Route::get('/fview','Backend\ItemController@fview')->name('fview');
+Route::get('/admin/item/view/{id}','Backend\ItemController@itemActive')->name('item.active');
 
 //item_types
 Route::get('/item_types','Backend\Item_TypesController@makeitypes')->name('item_types');
 Route::post('/item_types/create','Backend\Item_TypesController@createitypes')->name('itypes.create');
 Route::get('/item_typesview','Backend\Item_TypesController@itemtypesview')->name('itview');
 Route::get('/item_types/delete/{id}','Backend\Item_TypesController@delete')->name('it.delete');
+
 
 
 
@@ -60,6 +62,7 @@ Route::get('/itemdview','Backend\Item_DistributionsController@itemtdview')->name
 //Damages
 Route::get('/damage/{id}','Backend\DamageController@makedamage')->name('damage');
 Route::post('/damage/create','Backend\DamageController@createdamage')->name('damage.create');
+Route::get('/damageview','Backend\DamageController@damageview')->name('damage.list');
 
 
 

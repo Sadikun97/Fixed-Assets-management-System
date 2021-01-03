@@ -6,8 +6,8 @@
   <thead class="thead-dark">
     <tr>
       <th scope="col">Sl</th>
-      <th scope="col">Item's Id</th>
-      <th scope="col">Employee's ID</th> 
+      <th scope="col">Item's Name</th>
+      <th scope="col">Employee's Name</th> 
       <th scope="col">Location</th>
       <th scope="col">Action</th>
      
@@ -22,8 +22,8 @@
 
     <tr>
       <th scope="itemdistributions">{{$key+1}}</th>
-      <td>{{$data->item_id}}</td>
-      <td>{{$data->employee_id}}</td>
+      <td>{{$data->itemRelation->name}}</td>
+      <td>{{$data->employeeRelation->name}}</td>
        <td>{{$data->location}}</td>
      
       <td>

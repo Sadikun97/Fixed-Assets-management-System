@@ -11,7 +11,7 @@ use App\Models\Item_Distribution;
 class DamageController extends Controller
 {
     
-   
+
      //make damage
      public function makedamage($id)
     {
@@ -19,16 +19,17 @@ class DamageController extends Controller
       return view('backend.damage',compact('disId'));
     }
 
-//add item in damage
+//add items in damage
 
      public function createdamage(Request $request){
 
       
 
-        $damage= Damage::create([
+        Damage::create([
+            'item_distribution_id'=>$request->disId,
             'reason'=>$request->reason,
              'is_responsible'=>$request->is_responsible,
-             'item_distribution_id'=>$request->disId
+             
           
         ]);
         return redirect()->back()->with('message','Item added in damage list successfully.');
@@ -37,10 +38,13 @@ class DamageController extends Controller
 
     //view damage list
 
-     public function fview()
+     public function damageview()
     {
-            
-        return view('Backend.damageview', compact('damages'));
+
+        $damages = Damage::all();
+
+         return view('Backend.damageview',compact('damages'));
+   
 
     }
 

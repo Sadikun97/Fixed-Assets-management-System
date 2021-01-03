@@ -6,9 +6,10 @@
   <thead class="thead-dark">
     <tr>
       <th scope="col">Sl</th>
-      <th scope="col">Item types id</th>
+      <th scope="col">Item types Name</th>
       <th scope="col">Code</th>
       <th scope="col">Name</th>
+      <th scope="col">Status</th>
       <!-- <th scope="col">Image</th> -->
       <th scope="col">Action</th>
      
@@ -23,9 +24,23 @@
 
     <tr>
       <th scope="item">{{$key+1}}</th>
-      <td >{{$data->item_types_id}}</td>
+      <td >{{$data->itemTypesRelation->name}}</td>
       <td>{{$data->code}}</td>
       <td>{{$data->name}}</td>
+      <td><a href="{{route('item.active',$data->id)}}">
+
+     @if($data->status)
+       Active
+
+      @else
+      Inactive
+
+
+     @endif
+
+
+
+    </a></td>
      
       <td>
         <a class="btn btn-warning" href="{{route('item.edit',$data->id)}}">Edit</a>
