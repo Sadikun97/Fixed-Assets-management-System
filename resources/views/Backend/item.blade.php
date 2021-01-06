@@ -22,7 +22,6 @@
             <input name="name" required placeholder="Enter item name" type="text" class="form-control" id="item_name" aria-describedby="emailHelp" autocomplete="off">
 
         </div>
-
         <div class="form-group">
             <label for="text">Under Item Type</label>
             <select name="item_types_id" id="item_types_id" class="form-control">

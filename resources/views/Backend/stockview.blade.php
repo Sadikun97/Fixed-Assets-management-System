@@ -6,7 +6,7 @@
   <thead class="thead-dark">
     <tr>
       <th scope="col">Sl</th>
-      <th scope="col">Item's Id</th>
+      <th scope="col">Item's Name</th>
       <th scope="col">Quantity</th>
       <th scope="col">action</th>
      
@@ -21,8 +21,8 @@
 
     <tr>
       <th scope="stocks">{{$key+1}}</th>
-      <td>{{$data->item_id}}</td>
-       <td>{{$data->quantity}}</td>
+      <td>{{$data->itemRelation->name}}</td>
+       <td>{{$data->sum}}</td>
      
       <td>
         <a class="btn btn-warning" href="">Edit</a>

@@ -24,7 +24,7 @@
 
     <tr>
       <th scope="item">{{$key+1}}</th>
-      <td >{{$data->itemTypesRelation->name}}</td>
+      <td >{{optional($data->itemTypesRelation)->name}}</td>
       <td>{{$data->code}}</td>
       <td>{{$data->name}}</td>
       <td><a href="{{route('item.active',$data->id)}}">

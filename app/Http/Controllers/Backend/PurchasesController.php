@@ -4,24 +4,45 @@ namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Purchase;
+use App\Models\Item;
+
 
 class PurchasesController extends Controller
 {
     public function makepurchases(){
 
-    	return view('backend.purchases');
+
+        $purchases = Item::all();
+    	return view('backend.purchases', compact('purchases'));
     }
 
-    public function createpurchases(Request $request){
+    public function createpurchases(Request $request)
+    {
+       
+    $cartData=session('cart');
+        if(!$cartData)
+        {
+            $cart  = [
+            $request->items_id=>[
+           'item_id'=>$request->items_id,
+           'quantity'=>$request->quantity,
+           'price'=>$request->price]
+        ];
 
-         //ORM
-        Purchase::create([
-            'created_by'=>$request->created_by,
-            'total_amount'=>$request->total_amount,
-            'remark'=>$request->remark,
-        ]);
+        session()->put('cart',$cart);
 
+        return redirect()->back();
+        }
+
+        $cartData[$request->items_id]=[
+           'item_id'=>$request->items_id,
+           'quantity'=>$request->quantity,
+           'price'=>$request->price
+        ];
+
+
+            session()->put('cart',$cartData);
+            
         return redirect()->back();
 
     }

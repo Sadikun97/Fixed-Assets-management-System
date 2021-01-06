@@ -36,8 +36,15 @@ class StockController extends Controller
     public function stockview()
     {
             
-        $stocks = Stock::all();
-        return view('Backend.stockview',compact('stocks'));
+        $stocks = Stock::with('itemRelation')
+        ->groupBy('items_id')
+        ->selectRaw('sum(quantity) as sum, items_id')
+        ->get();
+  
 
+        // $stocks=$stocks->groupBy('items_id');
+       // dd($stocks);
+        return view('Backend.stockview',compact('stocks'));
+ 
     }
 }

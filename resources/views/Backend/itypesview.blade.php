@@ -25,8 +25,8 @@
       <td>{{$data->description}}</td>
      
       <td>
-        <a class="btn btn-warning" href="">Edit</a>
-        <a class="btn btn-danger" href="">Delete</a>
+        <a class="btn btn-warning" href="{{route('it.edit',$data->id)}}">Edit</a>
+        <a class="btn btn-danger" href="{{route('it.delete',$data->id)}}">Delete</a>
         <a class="btn btn-info" href="">View</a>
       </td>
     </tr>

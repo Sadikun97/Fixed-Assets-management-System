@@ -14,8 +14,8 @@ class CreateItemTypesTable extends Migration
     public function up()
     {
         Schema::create('item_types', function (Blueprint $table) {
-             $table->id();
-            $table->text('name');
+             $table->id()->onDelete('restrict');
+            $table->text('name')->unique();
             $table->string('description');
             $table->string('status')->default('active');
             $table->timestamps();

@@ -16,16 +16,15 @@
   </thead>
 
   
-
   @foreach($itemdistributions as $key=>$data)
 
 
     <tr>
-      <th scope="itemdistributions">{{$key+1}}</th>
+      <td scope="itemdistributions">{{$key+1}}</td>
       <td>{{$data->itemRelation->name}}</td>
       <td>{{$data->employeeRelation->name}}</td>
        <td>{{$data->location}}</td>
-     
+       
       <td>
         <a class="btn btn-warning" href="">Edit</a>
         <a class="btn btn-danger" href="">Delete</a>

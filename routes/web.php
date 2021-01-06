@@ -43,7 +43,10 @@ Route::get('/admin/item/view/{id}','Backend\ItemController@itemActive')->name('i
 Route::get('/item_types','Backend\Item_TypesController@makeitypes')->name('item_types');
 Route::post('/item_types/create','Backend\Item_TypesController@createitypes')->name('itypes.create');
 Route::get('/item_typesview','Backend\Item_TypesController@itemtypesview')->name('itview');
-Route::get('/item_types/delete/{id}','Backend\Item_TypesController@delete')->name('it.delete');
+Route::get('/item_types/delete/{id}','Backend\Item_TypesController@deleteitemtypes')->name('it.delete');
+Route::get('/item_types/edit/{id}','Backend\Item_TypesController@edititemtypes')->name('it.edit');
+
+Route::put('/item_types/update/{id}','Backend\Item_TypesController@updateitemtypes')->name('it.update');
 
 
 
@@ -80,6 +83,8 @@ Route::get('/employee/delete/{id}','Backend\EmployeeController@deleteemployee')-
 Route::get('/stock','Backend\StockController@makestock')->name('stock');
 Route::post('/stock/add','Backend\StockController@addstock')->name('add.stock');
 Route::get('/stockview','Backend\StockController@stockview')->name('stock.view');
+
+
 
 //purchases
 Route::get('/purchases','Backend\purchasesController@makepurchases')->name('purchases');
