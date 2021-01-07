@@ -78,6 +78,14 @@ Route::post('/employee/add','Backend\EmployeeController@addemployee')->name('add
 Route::get('/eview','Backend\EmployeeController@eview')->name('eview');
 Route::get('/employee/delete/{id}','Backend\EmployeeController@deleteemployee')->name('employee.delete');
 
+//user
+Route::get('/user','Backend\UserController@user')->name('user');
+Route::post('/user/add','Backend\UserController@adduser')->name('add.user');
+Route::get('/userview','Backend\UserController@userview')->name('user.view');
+Route::get('/user/delete/{id}','Backend\UserController@deleteuser')->name('user.delete');
+Route::get('/user/edit/{id}','Backend\UserController@edituser')->name('user.edit');
+Route::put('/user/update/{id}','Backend\UserController@updateuser')->name('user.update');
+
 
 //stock
 Route::get('/stock','Backend\StockController@makestock')->name('stock');

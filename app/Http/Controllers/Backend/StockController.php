@@ -12,6 +12,10 @@ class StockController extends Controller
     //make stock
     public function makestock(){
 
+        // $validateData = $request->validate([
+        //     'items_id' => 'required|max:255',
+        //   ]);
+
       $itemdshow = Item::all();
     	return view('Backend.stock',compact('itemdshow'));
     }

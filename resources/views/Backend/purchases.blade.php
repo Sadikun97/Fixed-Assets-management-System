@@ -55,11 +55,19 @@
     </tr>
     @endforeach
     @endif
-</tbody>
-</table>
-      </div>
 
-     </div>   
+   
+</tbody>
+
+
+</table>
+<div class="form-group">
+            <label for="text">Remarks</label>
+            <input name="price" required placeholder="Enter Remarks" type="text" class="form-control" id="price"\
+                >
+        </div>
+        <button style="float: right" type="submit" class="btn btn-primary">Submit</button>
+      
 
 </main>
 

@@ -22,7 +22,7 @@
     <tr>
       <td scope="itemdistributions">{{$key+1}}</td>
       <td>{{$data->itemRelation->name}}</td>
-      <td>{{$data->employeeRelation->name}}</td>
+      <td>{{optional($data->employeeRelation)->name}}</td>
        <td>{{$data->location}}</td>
        
       <td>

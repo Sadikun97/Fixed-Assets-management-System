@@ -133,11 +133,21 @@
             </span></a>
           </li>
 
-        <li>
-          <a class="app-menu__item" href="charts.html">
-            <i class="app-menu__icon fa fa-pie-chart"></i>
-            <span class="app-menu__label">Users</span>
-          </a>
+        <li class="treeview"><a class="app-menu__item" href="#"
+         data-toggle="treeview">
+         <i class="app-menu__icon fa fa-edit"></i>
+         <span class="app-menu__label">Users
+         <i class="treeview-indicator fa fa-angle-right"></i></a>
+          <ul class="treeview-menu">
+            <li><a class="treeview-item" href="{{route('user')}}">
+              <i class="icon fa fa-circle-o"></i>
+               Add New User</a>
+             </li>
+            <li><a class="treeview-item" href="{{route('user.view')}}">
+              <i class="icon fa fa-circle-o"></i> 
+              View Users</a>
+            </li>
+          </ul>
         </li>
         
           

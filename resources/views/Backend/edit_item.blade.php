@@ -24,7 +24,7 @@
         </div>
 
         <div class="form-group">
-            <label for="text">Item Types Id</label>
+            <label for="text">Item Types Name</label>
             <input name="item_types_id" value="{{$items->item_types_id}}" type="text" class="form-control" id="item_types_id"\
                 >
         </div>

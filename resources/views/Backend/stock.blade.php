@@ -27,11 +27,10 @@
 
         <div .col-md-3 .offset-md-3 class="form-group">
             <label for="items_id">Under Item's</label>
-            <select name="items_id" id="items_id" class="form-control">
+            <select name="items_id" id="items_id" class="form-control"  required>
                 <option value="0">Select a Item</option>
-
                 @foreach($itemdshow as $data)
-                <option value="{{$data->id}}">{{$data->name}}</option>
+                <option value="{{$data->id}}" >{{$data->name}}</option>
                 @endforeach
             </select>
         </div>

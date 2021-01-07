@@ -21,6 +21,7 @@ class Item_TypesController extends Controller
 //create item types
     public function createitypes(Request $request){
 
+
          //ORM
         Item_Types::create([
             'name'=>$request->input('name'),
