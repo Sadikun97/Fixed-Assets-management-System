@@ -15,7 +15,7 @@ class Item_DistributionsController extends Controller
     {
     	
 
-    	$itemdshow = Item::all();
+    	$itemdshow = Item::where('status','=', 1)->get();
     	$itemdshoww = Employee::all();
 
     	return view('backend.item-d',compact('itemdshow', 'itemdshoww'));

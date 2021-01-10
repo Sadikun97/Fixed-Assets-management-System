@@ -19,7 +19,7 @@
         @csrf
         <div .col-md-3 .offset-md-3 class="form-group">
             <label for="item_name">Enter Item Name</label>
-            <input name="name" required placeholder="Enter item name" type="text" class="form-control" id="item_name" aria-describedby="emailHelp" autocomplete="off">
+            <input name="name" required placeholder="Enter item name" type="text" class="form-control" id="item_name">
 
         </div>
         <div class="form-group">

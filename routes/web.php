@@ -29,6 +29,11 @@ Route::group(['middleware'=>'auth'],function (){
 Route::get('/dashboard','Backend\HomeController@dashboard')->name('dashboard');
 Route::get('/home','Backend\HomeController@index');
 
+//logout
+Route::get('/logout','Backend\UserController@logout')->name('logout');
+Route::post('/logout','Backend\UserController@logoutProcess')->name('logout.do');
+
+
 
 //item
 Route::get('/item','Backend\ItemController@makeitem')->name('item');
@@ -95,8 +100,13 @@ Route::get('/stockview','Backend\StockController@stockview')->name('stock.view')
 
 
 //purchases
-Route::get('/purchases','Backend\purchasesController@makepurchases')->name('purchases');
+Route::get('/purchases','Backend\PurchasesController@makepurchase')->name('purchases');
 Route::post('/purchases/create','backend\PurchasesController@createpurchases')->name('purchases.create');
+Route::get('/clear/cart','Backend\PurchasesController@clearcart')->name('cart.clear');
+Route::post('/purchases/submit','backend\PurchasesController@submit')->name('submit.purchase');
+
+
+Route::post('/purchases/add','backend\PurchasesController@addpurchase')->name('add.purchase');
 
 
 

@@ -67,7 +67,7 @@ class ItemController extends Controller
     public function fview()
     {
             
-        $item=Item::with('itemTypesRelation')->paginate(2);
+        $item=Item::with('itemTypesRelation')->paginate(5);
         return view('Backend.fview', compact('item'));
 
     }
