@@ -21,7 +21,6 @@ class CreateEmployeesTable extends Migration
             $table->string('email')->unique();
             $table->string('image')->nullable();
             $table->text('designation');
-             $table->string('status')->default('active');
             $table->timestamps();
         });
     }

@@ -23,22 +23,24 @@ class Item_DistributionsController extends Controller
     	
     }
 
-    //create itemd
+    //create itemdistribution
 public function createitemd(Request $request){
 
-         //ORM
+    $checkStock =Stock::where('items_id', $request->item_id)->first();
 
+    
 
-
-    $checkStock =Stock::where('items_id', $request->item_id)->count();
-
-    if($checkStock != 0){
+    if($checkStock->quantity >= $request->input('quantity')){
          Item_Distribution::create([
             'item_id'=>$request->input('item_id'),
             'employee_id'=>$request->input('employee_id'),
             'location'=>$request->input('location'),
+            'quantity'=>$request->input('quantity'),
             'remark'=>'helo'
         ]);
+
+            $checkStock->decrement('quantity',$request->input('quantity'));
+
           return redirect()->back()->with('message','Item distributed Successfully');
 
     }else{
@@ -54,7 +56,7 @@ public function createitemd(Request $request){
     }
 
 
-    //view itemdview
+    //view itemdistribution
 
     public function itemtdview()
     {
@@ -67,4 +69,22 @@ public function createitemd(Request $request){
         return view('Backend.itemdview', compact('itemdistributions'));
 
     }
+
+
+     //delete item distribution
+
+ public function deleteitemd($id)
+ {
+    $itemdistributions=Item_Distribution::find($id);
+
+    if(!empty($itemdistributions))
+    {
+        $itemdistributions->delete();
+        $message="Item Distribution Deleted Successfully";
+    }else{
+        $message="No data found.";
+    }
+     return redirect()->back()->with('message',$message);
+ }
+
 }

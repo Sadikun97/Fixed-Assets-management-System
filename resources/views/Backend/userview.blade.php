@@ -7,6 +7,7 @@
     <tr>
       <th scope="col">Sl</th>
       <th scope="col">Name</th> 
+      <th scope="col">User Type</th> 
       <th scope="col">Contact</th>
        <th scope="col">Email</th> 
       <th scope="col">Action</th>
@@ -21,6 +22,7 @@
     <tr>
       <th scope="users">{{$key+1}}</th>
       <td >{{$data->name}}</td>
+      <td >{{$data->user_type}}</td>
       <td>{{$data->contact}}</td>
       <td >{{$data->email}}</td>
       

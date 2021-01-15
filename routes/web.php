@@ -27,12 +27,10 @@ Route::post('/login','Backend\UserController@loginProcess')->name('login.do');
 Route::group(['middleware'=>'auth'],function (){
 
 Route::get('/dashboard','Backend\HomeController@dashboard')->name('dashboard');
-Route::get('/home','Backend\HomeController@index');
-
 //logout
 Route::get('/logout','Backend\UserController@logout')->name('logout');
 Route::post('/logout','Backend\UserController@logoutProcess')->name('logout.do');
-
+Route::get('/fview','Backend\ItemController@fview')->name('fview');
 
 
 //item
@@ -41,7 +39,7 @@ Route::post('/item/create','Backend\ItemController@createItem')->name('item.crea
 Route::get('/item/edit/{id}','Backend\ItemController@edititem')->name('item.edit');
 Route::put('/item/update/{id}','Backend\ItemController@updateitem')->name('item.update');
 Route::get('/item/delete/{id}','Backend\ItemController@delete')->name('item.delete');
-Route::get('/fview','Backend\ItemController@fview')->name('fview');
+
 Route::get('/admin/item/view/{id}','Backend\ItemController@itemActive')->name('item.active');
 
 //item_types
@@ -62,6 +60,7 @@ Route::get('/item_distributions','Backend\Item_DistributionsController@makeitemd
 
 Route::post('/item_distributions/create','Backend\Item_DistributionsController@createitemd')->name('itemd.create');
 Route::get('/itemdview','Backend\Item_DistributionsController@itemtdview')->name('itemd.view');
+Route::get('/itemdview/delete/{id}','Backend\Item_DistributionsController@deleteitemd')->name('itemd.delete');
 
 // Route::get('/damageshow','Backend\Item_DistributionsController@damageshow')->name('damagetable.show');
 // Route::post('/add_damage','Backend\Item_DistributionsController@damageadd')->name('add.damage');
@@ -104,10 +103,12 @@ Route::get('/purchases','Backend\PurchasesController@makepurchase')->name('purch
 Route::post('/purchases/create','backend\PurchasesController@createpurchases')->name('purchases.create');
 Route::get('/clear/cart','Backend\PurchasesController@clearcart')->name('cart.clear');
 Route::post('/purchases/submit','backend\PurchasesController@submit')->name('submit.purchase');
-
-
+Route::get('/purchases/view','Backend\PurchasesController@purchaselistview')->name('purchaselist.view');
+Route::get('/purchase/delete/{id}','Backend\PurchasesController@purchasedelete')->name('purchase.delete');
 Route::post('/purchases/add','backend\PurchasesController@addpurchase')->name('add.purchase');
 
+//purchase details
+Route::get('/purchasedetailsview/{id}','Backend\PurchasesController@purchasedetailsview')->name('purchasedetails.view');
 
 
 });

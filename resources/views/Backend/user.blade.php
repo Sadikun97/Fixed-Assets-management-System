@@ -21,6 +21,16 @@
             <input name="name" required placeholder="Enter User name" type="text" class="form-control" id="text" aria-describedby="emailHelp" autocomplete="off">
 
         </div>
+       
+        <div  class="form-group">
+            <label for="user_name">User type</label>
+            <select name="user_type" id="id" class="form-control">
+                <option value="">Select a User Types</option>
+                <option value="admin">admin</option>
+                <option value="manager">Manager</option>
+            </select>
+
+        </div>
 
 
          <div class="form-group">
@@ -37,7 +47,7 @@
 
  <div class="form-group">
             <label for="email">Password</label>
-            <input name="password" required placeholder="Password" type="text" class="form-control" id="text"
+            <input name="password" required placeholder="Password" type="password" class="form-control" id="text"
                 >
         </div>
 

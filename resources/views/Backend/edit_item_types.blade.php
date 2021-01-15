@@ -19,7 +19,7 @@
         @csrf
         <div .col-md-3 .offset-md-3 class="form-group">
             <label for="item_types_name">Enter Item Types Name</label>
-            <input name="name" required value="{{$item_types->name}}" type="text" class="form-control" id="name" aria-describedby="emailHelp" autocomplete="off">
+            <input name="name" required value="{{$item_types->name}}" type="text" class="form-control" id="name" aria-describedby="emailHelp" >
 
         </div>
 
@@ -27,7 +27,7 @@
 
         <div class="form-group">
             <label for="text">Description</label>
-            <input name="description" required value="{{$item_types->name}}" type="text" class="form-control" id="text"
+            <input name="description" required value="{{$item_types->description}}" type="text" class="form-control" id="text"
                 >
         </div>
 

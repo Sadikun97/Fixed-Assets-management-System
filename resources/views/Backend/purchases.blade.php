@@ -17,12 +17,12 @@
         </div>
         <div class="form-group">
             <label for="text">Quantity</label>
-            <input name="quantity" required placeholder="Enter Quantity" type="number" class="form-control" id="quantity">
+            <input name="quantity"min="1" required placeholder="Enter Quantity" type="number" class="form-control" id="quantity">
         </div>
 
         <div class="form-group">
             <label for="text">Price</label>
-            <input name="price" required placeholder="Enter Price" type="number" class="form-control" id="price">
+            <input name="price"min="1" required placeholder="Enter Price" type="number" class="form-control" id="price">
         </div>
         
         <button style="float: right" type="submit" class="btn btn-primary">Add to cart</button>
@@ -34,9 +34,9 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Items Name </th>
+      <th scope="col">Item's Name </th>
       <th scope="col">Quantity</th>
-      <th scope="col">Price</th>
+      <th scope="col">Unit Price</th>
       <th scope="col">Total</th>
     </tr>
   </thead>
@@ -65,12 +65,16 @@
 <form action="{{route('submit.purchase')}}" method="post">
 @csrf
 <div class="form-group">
-            <label for="text">Remarks</label>
-            <input name="remarks" placeholder="Enter Remarks" type="text" class="form-control" id="remarks">
+            <label for="text">Remark</label>
+            <input name="remarks" placeholder="Enter Remark" type="text" class="form-control" id="remarks">
         </div>
-        <button style="float: right" type="submit" class="btn btn-primary">Submit</button>
+        <div class="form-group">
+            <label for="text">Purchased By</label>
+            <input name="purchase_by" placeholder="Purchased By" type="text" class="form-control" id="purchase_by">
+        </div>
+        <button style="float: right;margin-left: 10px;" type="submit" class="btn btn-primary">Submit</button>
       
-        <a href="{{route('cart.clear')}}" style="float: right" type="submit" class="btn btn-primary">Cart Clear</button>
+        <a href="{{route('cart.clear')}}" style="float: right" type="submit" class="btn btn-primary">Cart Clear</a>
         </form>
 </main>
 

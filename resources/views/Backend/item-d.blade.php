@@ -42,10 +42,16 @@
         </div>
          <div class="form-group">
             <label for="location">Location</label>
-            <input name="location" required placeholder="location" type="text" class="form-control" id="text"
+            <input name="location" required placeholder="Location" type="text" class="form-control" id="text"
                 >
         </div>
 
+
+        <div class="form-group">
+            <label for="location">Quantity</label>
+            <input name="quantity" min="1" required placeholder="Quantity" type="number" class="form-control" id="quantity"
+                >
+        </div>
  <div class="form-group">
             <label for="remark">Remark</label>
             <input name="remark" required placeholder="Remark" type="text" class="form-control" id="text"

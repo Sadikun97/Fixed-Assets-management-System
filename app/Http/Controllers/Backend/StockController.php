@@ -46,8 +46,7 @@ class StockController extends Controller
         ->get();
   
 
-        // $stocks=$stocks->groupBy('items_id');
-       // dd($stocks);
+        
         return view('Backend.stockview',compact('stocks'));
  
     }

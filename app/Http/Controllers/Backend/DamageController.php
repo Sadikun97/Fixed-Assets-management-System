@@ -16,6 +16,7 @@ class DamageController extends Controller
      public function makedamage($id)
     {
       $disId=$id;
+    
       return view('backend.damage',compact('disId'));
     }
 
@@ -23,14 +24,13 @@ class DamageController extends Controller
 
      public function createdamage(Request $request){
 
-      
+     $distibution = Item_Distribution::findOrFail($request->disId);
 
         Damage::create([
             'item_distribution_id'=>$request->disId,
             'reason'=>$request->reason,
-             'is_responsible'=>$request->is_responsible,
-             
-          
+            'is_responsible'=>$request->is_responsible,
+            'item_id' =>$distibution->item_id
         ]);
         return redirect()->back()->with('message','Item added in damage list successfully.');
 
@@ -41,7 +41,8 @@ class DamageController extends Controller
      public function damageview()
     {
 
-        $damages = Damage::all();
+
+        $damages=Damage::with('itemRelation')->get();
 
          return view('Backend.damageview',compact('damages'));
    

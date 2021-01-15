@@ -56,7 +56,6 @@ class ItemController extends Controller
         Item::create([
             'name'=>$request->name,
              'item_types_id'=>$request->item_types_id,
-            'code'=>$request->code,
             'description'=>$request->description
         ]);
 
@@ -64,10 +63,25 @@ class ItemController extends Controller
 
     }
 //view all items
-    public function fview()
+    public function fview(Request $request)
     {
-            
+        $searchTerm = trim($request->input('search'));
+
+
         $item=Item::with('itemTypesRelation')->paginate(5);
+
+
+        if($request->input('search')){
+          $item=  Item::query()->whereHas('itemTypesRelation',function($query) use($searchTerm){
+                $query->where('name','like',"%{$searchTerm}%")
+                ->orWhere('name','like',"%{$searchTerm}%");
+          })
+          ->orwhere('name','like',"%{$searchTerm}%")
+          ->with(['itemTypesRelation'])
+          ->paginate(5);
+        }
+    
+       
         return view('Backend.fview', compact('item'));
 
     }
@@ -89,6 +103,7 @@ class ItemController extends Controller
         return redirect()->back()->with('message',$message);
     }
 
+    //active inactive
 
     public function itemActive($id)
     {

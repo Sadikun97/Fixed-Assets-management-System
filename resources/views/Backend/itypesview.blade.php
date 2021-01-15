@@ -2,6 +2,18 @@
 @section('main')
 
 <main class="app-content">
+<!-- code for search -->
+<div style="display: flex;
+    justify-content: flex-end;
+    margin-bottom:20px">
+<div class="app-search" style="width:20%">
+      
+      <input class="app-search__input" style="color:blue;width:100%"  type="search" placeholder="Search"/>
+      <button class="app-search__button"><i class="fa fa-search"></i></button>
+</div>
+</div>
+
+
 <table class="table">
   <thead class="thead-dark">
     <tr>

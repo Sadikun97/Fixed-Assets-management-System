@@ -18,8 +18,8 @@
     <form action="{{route('item.create')}}"  method="post">
         @csrf
         <div .col-md-3 .offset-md-3 class="form-group">
-            <label for="item_name">Enter Item Name</label>
-            <input name="name" required placeholder="Enter item name" type="text" class="form-control" id="item_name">
+            <label for="item_name">Enter Item's Name</label>
+            <input name="name" required placeholder="Enter a Item's name" type="text" class="form-control" id="item_name">
 
         </div>
         <div class="form-group">
@@ -31,13 +31,7 @@
                 @endforeach
             </select>
         </div>
-        <div class="form-group">
-            <label for="text">Code</label>
-            <input name="code" required placeholder="code" type="text" class="form-control" id="text"
-                >
-
-
-        </div>
+      
         <div class="form-group">
             <label for="price">Description</label>
             <textarea class="form-control" name="description" id="" cols="30" rows="10"></textarea>

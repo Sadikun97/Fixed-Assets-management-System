@@ -17,8 +17,8 @@
     <form action="{{route('add.employee')}}"  method="post" enctype="multipart/form-data">
         @csrf
         <div .col-md-3 .offset-md-3 class="form-group">
-            <label for="employee_name">Emloyee Name</label>
-            <input name="name" required placeholder="Enter Emloyee name" type="text" class="form-control" id="text" aria-describedby="emailHelp" autocomplete="off">
+            <label for="employee_name">Emloyee's Name</label>
+            <input name="name" required placeholder="Enter Emloyee's name" type="text" class="form-control" id="text" aria-describedby="emailHelp" autocomplete="off">
 
         </div>
 
@@ -31,7 +31,7 @@
 
          <div class="form-group">
             <label for="email">Contact</label>
-            <input name="contact" required placeholder="contact" type="text" class="form-control" id="text"
+            <input name="contact" required placeholder="Contact" type="text" class="form-control" id="text"
                 >
         </div>
 

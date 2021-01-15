@@ -2,7 +2,7 @@
 @section('main')
 <main class="app-content">
 
-<h1>Add new Item Type</h1>
+<h1>Add new Item Types</h1>
 
 @if(session()->has('message'))
     <p class="alert alert-success">{{session()->get('message')}}</p>
@@ -18,7 +18,7 @@
         @csrf
         <div .col-md-3 .offset-md-3 class="form-group">
             <label for="item_types_name">Enter Item Types Name</label>
-            <input name="name" required placeholder="Enter Item Types Name" type="text" class="form-control" id="name" aria-describedby="emailHelp" autocomplete="off">
+            <input name="name" required placeholder="Enter Item Types Name" type="text" class="form-control" id="name" aria-describedby="emailHelp" >
 
         </div>
 

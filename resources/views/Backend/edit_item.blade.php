@@ -29,11 +29,7 @@
                 >
         </div>
 
-        <div class="form-group">
-            <label for="text">Code</label>
-            <input name="code" value="{{$items->code}}" type="text" class="form-control" id="text"\
-                >
-        </div>
+        
         <div class="form-group">
             <label for="price">Description</label>
             <textarea class="form-control" name="description" id="" cols="30" rows="10">{{$items->description}}</textarea>

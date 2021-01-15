@@ -19,8 +19,7 @@ class CreatePurchasesDetailsTable extends Migration
             $table->foreignId('item_id');
             $table->string('quantity');
             $table->string('price');
-            $table->string('purchase_date');
-            $table->string('user_id');
+            $table->string('total');
             $table->string('remarks')->nullable();
             $table->timestamps();
         });

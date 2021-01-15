@@ -28,7 +28,7 @@ class UserController extends Controller
 
         if (Auth::attempt($login_info)) {
             $request->session()->regenerate();
-            return redirect()->intended('home');
+            return redirect()->intended('dashboard');
         }
         else
         {
@@ -44,7 +44,8 @@ class UserController extends Controller
 
     public function user(){
 
-        return view('backend.user');
+        $user= User::all();
+        return view('backend.user', compact('user'));
     } 
 
 
@@ -53,12 +54,16 @@ class UserController extends Controller
      public function adduser(Request $request){
 
          //ORM
+
         User::create([
             'name'=>$request->name,
              'contact'=>$request->contact,
             'email'=>$request->email,
+            'user_type'=>$request->user_type,
             'password'=>bcrypt($request->password),
         ]);
+
+       
 
         return redirect()->back()->with('message','User Added Successfully.');
 

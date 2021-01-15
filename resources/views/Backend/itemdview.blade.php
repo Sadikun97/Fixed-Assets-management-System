@@ -21,13 +21,13 @@
 
     <tr>
       <td scope="itemdistributions">{{$key+1}}</td>
-      <td>{{$data->itemRelation->name}}</td>
+      <td >{{optional($data->itemRelation)->name}}</td>
       <td>{{optional($data->employeeRelation)->name}}</td>
        <td>{{$data->location}}</td>
        
       <td>
         <a class="btn btn-warning" href="">Edit</a>
-        <a class="btn btn-danger" href="">Delete</a>
+        <a class="btn btn-danger" href="{{route('itemd.delete',$data->id)}}">Delete</a>
         <a class="btn btn-info" href="">View</a>
         <a class="btn btn-secondary" href="{{route('damage',$data->id)}}">Damage</a>
       </td>

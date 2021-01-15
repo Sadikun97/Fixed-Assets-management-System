@@ -19,7 +19,11 @@ class EmployeeController extends Controller
 
     public function addemployee(Request $request){
 
-         //ORM
+         $validateData = $request->validate([
+
+            "contact" => "required|regex:/^\+?(88)?0?1[3456789][0-9]{8}\b/|unique:employees"
+
+         ]);
 
 
         $data = [

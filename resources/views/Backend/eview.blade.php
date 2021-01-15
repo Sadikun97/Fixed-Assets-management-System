@@ -2,6 +2,29 @@
 @section('main')
 
 <main class="app-content">
+<!-- code for search -->
+<div class="container">
+          <div class="row">
+              <div class="col-md-10">
+              <div class="app-search" style="width:20%">
+      
+      <input class="app-search__input" style="color:blue;width:100%"  type="search" placeholder="Search"/>
+      <button class="app-search__button"><i class="fa fa-search"></i></button>
+</div>
+              </div>
+              <div class="col-md-2">
+                        
+<div>
+    
+<a style="float: right" type="submit" onclick="window.print()" class="btn btn-primary" href="#">
+           Print</a>
+    
+    </div>
+              </div>
+
+          </div>
+      </div>
+
 <table class="table">
   <thead class="thead-dark">
     <tr>
